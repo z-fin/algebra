@@ -20,7 +20,7 @@ def para_divisores(a,lista):
 # funcion para encontrar los divisores de a0 y an (coef principal) parte 2
 def posiblesRaices(an,x0):
     # aca uso la funcion que defini anteriormente dandole valores a los parametros y printeo los resultados que son los divisores de x0 e xn
-    para_divisores(an,divAn)
+    para_divisores(an ,divAn)
     para_divisores(x0,divA0)
     print('los numeros divisibles por', an, 'son:', divAn)
     print('los numeros divisibles por', x0, 'son:', divA0)
@@ -41,7 +41,7 @@ def fracciones(lista1, lista2):
             lista_fracciones.append(frac1) #este append se hace a la lista que defini al principio de esta funcion
             # y divisones
             frac = i / j
-            raices_posibles.append(frac) #este append se hace a una lista global que defini en la primera parte de todo el codigo
+            raices_posibles.append(frac) #este append se hace a una lista global que defini en la primera parte
     print('hay', len(lista_fracciones), 'posibles raices')
     print(lista_fracciones)
 
@@ -50,22 +50,24 @@ def polinomio_grado_3(an,bn,cn,x0,lista):
     posiblesRaices(an,x0)
     fracciones(divA0,divAn)
     print(raices_posibles)
-    
+
     lista_raices = []
-    habra_solucion_racional = len(lista_raices)
+    habra_solucion_racional = len(lista)
     # chequea el tamaño de la lista, si no tiene elementos entonces significa que el polinomio no tiene raices racionales
     if habra_solucion_racional != 0:
          # ooootro for loop :')
          # este reemplaza los resultados de la funcion fracciones y hace las cuentas
          # si la cuenta da 0, entonces esa fraccion es raiz
-        for i in lista:
-            q = an * (i**3) + bn * (i**2) + cn * i +  x0
+        for i in raices_posibles:
+            q = (an) * (i**3) + (bn) * (i**2) + (cn) * i +  (x0) 
             if q == 0:
                 lista_raices.append(i)
                 print(i,' es una raiz real del polinomio')
+
     else:
-        print('el polinomio no tiene raices racionales')
+        print('el polinomio',an,'x^3 + ',bn,'x^2 + ',cn,' x + ',x0,' no tiene raices racionales')
 
 
 #pruebas
-polinomio_grado_3(4,12,1,3,raices_posibles)
+
+polinomio_grado_3(1,0,0,8,raices_posibles)
