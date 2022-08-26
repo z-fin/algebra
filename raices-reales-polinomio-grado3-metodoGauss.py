@@ -18,12 +18,12 @@ def para_divisores(a,lista):
             lista.append(i)
 
 # funcion para encontrar los divisores de a0 y an (coef principal) parte 2
-def posiblesRaices(x0,xn):
+def posiblesRaices(an,x0):
     # aca uso la funcion que defini anteriormente dandole valores a los parametros y printeo los resultados que son los divisores de x0 e xn
-    para_divisores(x0 ,divA0)
-    para_divisores(xn,divAn)
+    para_divisores(an,divAn)
+    para_divisores(x0,divA0)
+    print('los numeros divisibles por', an, 'son:', divAn)
     print('los numeros divisibles por', x0, 'son:', divA0)
-    print('los numeros divisibles por', xn, 'son:', divAn)
 
 # funcion para fabricar las fracciones con los divisores de a0 y an
 def fracciones(lista1, lista2):
@@ -46,8 +46,11 @@ def fracciones(lista1, lista2):
     print(lista_fracciones)
 
 #funcion para reemplazar las posibles raices en el polinomio y chequear cual es la raiz
-def polinomio_grado_3(x0,x2,x3,xn,lista):
-    F = 0
+def polinomio_grado_3(an,bn,cn,x0,lista):
+    posiblesRaices(an,x0)
+    fracciones(divA0,divAn)
+    print(raices_posibles)
+    
     lista_raices = []
     habra_solucion_racional = len(lista_raices)
     # chequea el tamaño de la lista, si no tiene elementos entonces significa que el polinomio no tiene raices racionales
@@ -56,16 +59,13 @@ def polinomio_grado_3(x0,x2,x3,xn,lista):
          # este reemplaza los resultados de la funcion fracciones y hace las cuentas
          # si la cuenta da 0, entonces esa fraccion es raiz
         for i in lista:
-            F = i
-            q = x0 + x2 * F + x3 * (F**2) + xn * (F**3)
+            q = an * (i**3) + bn * (i**2) + cn * i +  x0
             if q == 0:
                 lista_raices.append(i)
-                print(i)
+                print(i,' es una raiz real del polinomio')
     else:
         print('el polinomio no tiene raices racionales')
 
 
 #pruebas
-posiblesRaices(-14,3)
-fracciones (divA0,divAn)
 polinomio_grado_3(4,12,1,3,raices_posibles)
