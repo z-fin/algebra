@@ -1,1 +1,1 @@
-# practicas de desarrollo de algoritmos de algebra
+# practicas de desarrollo de algoritmos resolviendo ejercicios de algebra CBC
