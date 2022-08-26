@@ -43,6 +43,7 @@ def fracciones(lista1, lista2):
             frac = i / j
             raices_posibles.append(frac) #este append se hace a una lista global que defini en la primera parte
     print('hay', len(lista_fracciones), 'posibles raices')
+    lista_fracciones = list(dict.fromkeys(lista_fracciones))
     print(lista_fracciones)
 
 #funcion para reemplazar las posibles raices en el polinomio y chequear cual es la raiz
