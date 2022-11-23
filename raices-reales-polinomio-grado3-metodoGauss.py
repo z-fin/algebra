@@ -10,7 +10,7 @@ def para_divisores(a,lista):
     # lista arbitraria de num a chequear
     a_chequear = list(range(-100,100))
     # el loop chequea cada elemeno de la lista a_chequear para ver si el primer parametro es divisible por este num
-    # despues le hace appen a los num que si son divisores del parametro
+    # despues le hace append a los num que si son divisores del parametro
     for i in a_chequear:
         if i == 0:
             continue
